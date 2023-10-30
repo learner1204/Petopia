@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adoption Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-image: url("https://www.ddfl.org/wp-content/uploads/2023/10/10_cats_banner-2.png");
+      background-attachment: fixed;
+
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+    .trans-backgrnd{
+      width: 50%;
+      margin-left: 25%;
+
+      color:  #fdfefe  ;
+      background-color:  rgba(0, 0, 0, 0.6) ;
+      /* opacity: 0.6;  */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="trans-backgrnd">
+  <h1>Adoption Form</h1>
+
+  <form action="/adopt" method="post">
+    <label for="first_name">First Name*</label>
+    <input type="text" name="first_name" id="first_name" required>
+
+    <label for="last_name">Last Name*</label>
+    <input type="text" name="last_name" id="last_name" required>
+
+    <label for="address">Address*</label>
+    <input type="text" name="address" id="address" required>
+
+    <label for="phone_number">Phone Number (Mobile)*</label>
+    <input type="tel" name="phone_number" id="phone_number" required>
+
+    <label for="email">E-mail*</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="ownership_status">Do you own or rent?*</label>
+    <select name="ownership_status" id="ownership_status">
+      <option value="own">Own</option>
+      <option value="rent">Rent</option>
+    </select>
+
+    <br><br><label for="fenced_yard">Do you have a fenced in yard?*</label>
+    <select name="fenced_yard" id="fenced_yard">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <label for="children_in_home">Are there any children in the home? </label>
+    <select name="children_in_home" id="children_in_home">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select><br><br>
+
+    <label for="crate_pet">Will you crate your pet?*</label>
+    <select name="crate_pet" id="crate_pet">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <label for="hours_alone">How many hours of the day will the pet be alone at home?*</label>
+    <input type="number" name="hours_alone" id="hours_alone" required><br><br>
+
+    <label for="pet_stay_location">If you have to leave town, emergent or planned, where will your pet stay?*</label>
+    <input type="text" name="pet_stay_location" id="pet_stay_location" required<br><br>
+
+    <label for="behavioral_issues">How will you deal with behavioral issues such as barking, chewing, destructive behavior, bathroom accidents indoors, or unruly leash behavior in your pet? *</label>
+    <textarea name="behavioral_issues" id="behavioral_issues" required></textarea><br><br>
+
+    <label for="other_pets">Do you own any other pets? If yes, how many? (Cat or dog)*</label>
+    <select name="other_pets" id="other_pets">
+      <option value="no">No</option>
+      <option value="one">One</option>
+      <option value="two">Two</option>
+      <option value="three">Three or more</option>
+    </select><br><br>
+
+    <label for="pet_breed">What is the breed of your pet?*</label>
+    <input type="text" name="pet_breed" id="pet_breed><br><br>
+    <label for="pet_disposition">What is your pet's disposition and behavior toward other dogs? *</label>
+    <textarea name="pet_disposition" id="pet_disposition" required></textarea><br><br>
+
+    <label for="pet_gender">Is your pet male or female?</label>
+    <select name="pet_gender" id="pet_gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select><br><br>
+
+    <label for="pet_spayed_neutered">Is your pet spayed or neutered?</label>
+    <select name="pet_spayed_neutered" id="pet_spayed_neutered">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <label for="references">Please provide three references including name and phone number. *</label>
+    <textarea name="references" id="references" required></textarea><br><br>
+
+    <label for="other_pets_used">Is your pet used to other pets?</label>
+    <select name="other_pets_used" id="other_pets_used">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <label for="other">Other</label>
+    <textarea name="other" id="other"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
