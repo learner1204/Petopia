@@ -31,6 +31,7 @@ with app.app_context():
 def index():
     return render_template('loginSignup.html')
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -44,8 +45,7 @@ def register():
         db.session.commit()
         return redirect('/login')
 
-    return render_template('register.html')
-
+    return render_template('loginSignup.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -58,11 +58,11 @@ def login():
 
         if user and user.check_password(password):
             session['email'] = user.email
-            return redirect('/dashboard')
+            return render_template('index.html')
         else:
-            return render_template('login.html', error='Invalid user')
+            return render_template('loginSignup.html', error='Invalid user')
 
-    return render_template('login.html')
+    return render_template('loginSignup.html')
 
 
 # @app.route('/dashboard')
