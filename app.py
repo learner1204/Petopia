@@ -27,10 +27,9 @@ with app.app_context():
     db.create_all()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-
+    return render_template('loginSignup.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -46,6 +45,7 @@ def register():
         return redirect('/login')
 
     return render_template('register.html')
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -65,13 +65,13 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/dashboard')
-def dashboard():
-    if session['email']:
-        user = User.query.filter_by(email=session['email']).first()
-        return render_template('home.html', user=user)
-        # return redirect('/')
-    return redirect('/login')
+# @app.route('/dashboard')
+# def dashboard():
+#     if session['email']:
+#         user = User.query.filter_by(email=session['email']).first()
+#         return render_template('home.html', user=user)
+#         # return redirect('/')
+#     return redirect('/login')
 
 
 @app.route('/logout')
