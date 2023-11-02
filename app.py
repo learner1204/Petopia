@@ -28,8 +28,18 @@ with app.app_context():
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def firstopening():
     return render_template('loginSignup.html')
+
+
+@app.route('/adoption', methods=['GET', 'POST'])
+def adoption():
+    # Get the ID from the form data
+    id = request.form.get('id')
+
+    # Do something with the ID, for example, print it
+    print(id)
+    return render_template('AdoptinApp.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -58,12 +68,16 @@ def login():
 
         if user and user.check_password(password):
             session['email'] = user.email
-            return render_template('index.html')
+            return redirect('/homepage')
         else:
             return render_template('loginSignup.html', error='Invalid user')
 
     return render_template('loginSignup.html')
 
+
+@app.route('/homepage', methods=['GET', 'POST'])
+def homepage():
+    return render_template('index.html')
 
 # @app.route('/dashboard')
 # def dashboard():
